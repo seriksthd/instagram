@@ -6,16 +6,9 @@ export const tourSlice = createSlice({
   initialState: {
     tours: [],
     isLoading: false,
-    isError:''
+    isError: "",
   },
-  reducers: {
-    // addTour: (state, action) => {
-    //   state.tours.push(action.payload);
-    // },
-    // deleteTour: (state, action) => {
-    //   state.tours = state.tours.filter((tour) => tour.id !== action.payload);
-    // },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(getAllTours.fulfilled, (state, action) => {
@@ -27,7 +20,7 @@ export const tourSlice = createSlice({
       })
       .addCase(getAllTours.rejected, (state) => {
         state.isLoading = false;
-        state.isError='error'
+        state.isError = "error";
       });
   },
 });
